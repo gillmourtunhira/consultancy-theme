@@ -1,0 +1,192 @@
+// Portfolio page specific styles
+.portfolio-hero {
+    padding: 6rem 0;
+    background-color: #FFF8E5;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+    
+    .filter-btn {
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      background-color: transparent;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        border-color: #FFB800;
+        color: #FFB800;
+      }
+      
+      &.active {
+        background-color: #FFB800;
+        border-color: #FFB800;
+        color: #fff;
+      }
+    }
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      
+      &:hover {
+        .portfolio-overlay {
+          opacity: 1;
+        }
+      }
+    }
+    
+    .portfolio-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 184, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      
+      .portfolio-title {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .portfolio-category {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1.5rem;
+      }
+      
+      .portfolio-link {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background-color: #fff;
+        color: #333;
+        border-radius: 4px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  // Portfolio detail page
+  .portfolio-detail {
+    padding: 5rem 0;
+    
+    .portfolio-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .portfolio-meta {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      color: #666;
+      
+      .meta-item {
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+        
+        .meta-label {
+          font-weight: 600;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    
+    .portfolio-images {
+      margin-bottom: 3rem;
+      
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    .portfolio-description {
+      margin-bottom: 3rem;
+    }
+    
+    .portfolio-features {
+      margin-bottom: 3rem;
+      
+      .features-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          position: relative;
+          padding-left: 1.5rem;
+          margin-bottom: 0.75rem;
+          
+          &:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFB800;
+          }
+        }
+      }
+    }
+    
+    .related-projects {
+      padding-top: 3rem;
+      border-top: 1px solid #eee;
+      
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+  }

@@ -18,3 +18,5 @@
 
 # Ignore yarn.lock
 /yarn.lock
+
+/dist

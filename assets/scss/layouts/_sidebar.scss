@@ -1,0 +1,59 @@
+// Sidebar styles (for blog and portfolio pages)
+.sidebar {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    
+    .widget {
+      margin-bottom: 2.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    .widget-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .widget-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 0.75rem;
+        
+        a {
+          color: #333;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: #FFB800;
+          }
+        }
+      }
+    }
+  }
+  
+  // Search widget
+  .search-widget {
+    form {
+      display: flex;
+      
+      .form-control {
+        flex: 1;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      
+      .btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }

@@ -1,0 +1,41 @@
+// Form styles
+.form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out;
+    
+    &:focus {
+      border-color: #FFB800;
+      outline: 0;
+    }
+  }
+  
+  // Contact form and newsletter subscription styles
+  .contact-form {
+    // Specific styles for the contact form
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .form-control {
+      flex: 1;
+      margin-right: 10px;
+    }
+    
+    .btn {
+      flex-shrink: 0;
+    }
+  }

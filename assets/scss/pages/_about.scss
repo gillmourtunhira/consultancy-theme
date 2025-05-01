@@ -1,0 +1,214 @@
+// About page specific styles
+.about-hero {
+    padding: 6rem 0;
+    background-color: #FFF8E5;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .mission-section {
+    padding: 5rem 0;
+    
+    .mission-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      
+      .mission-text {
+        flex: 1;
+        min-width: 300px;
+        padding-right: 3rem;
+        
+        @media (max-width: 768px) {
+          padding-right: 0;
+          margin-bottom: 2rem;
+        }
+      }
+      
+      .mission-image {
+        flex: 1;
+        min-width: 300px;
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  
+  .values-section {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .value-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      
+      .value-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1.5rem;
+      }
+      
+      .value-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  
+  .team-section {
+    padding: 5rem 0;
+  }
+  
+  .history-section {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background-color: #eee;
+        transform: translateX(-50%);
+      }
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding: 2rem 0;
+      
+      &:nth-child(odd) {
+        .timeline-content {
+          margin-left: auto;
+          
+          &:before {
+            left: -10px;
+          }
+        }
+      }
+      
+      &:nth-child(even) {
+        .timeline-content {
+          margin-right: auto;
+          
+          &:before {
+            right: -10px;
+          }
+        }
+      }
+    }
+    
+    .timeline-content {
+      position: relative;
+      width: 45%;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: #FFB800;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    
+    .timeline-year {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFB800;
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .timeline-text {
+        color: #666;
+      }
+    }
+    
+    .clients-section {
+      padding: 5rem 0;
+      
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 2rem;
+        align-items: center;
+      }
+      
+      .client-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        padding: 1.5rem;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-5px);
+        }
+        
+        img {
+          max-width: 100%;
+          max-height: 60px;
+          filter: grayscale(100%);
+          opacity: 0.7;
+          transition: all 0.3s ease;
+        }
+        
+        &:hover img {
+          filter: grayscale(0);
+          opacity: 1;
+        }
+      }
+    }

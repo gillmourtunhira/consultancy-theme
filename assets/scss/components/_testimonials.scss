@@ -1,0 +1,48 @@
+// Testimonial styles
+.testimonial-section {
+    padding: 5rem 0;
+  }
+  
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      
+      .author-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+      
+      .author-info {
+        .author-name {
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+        }
+        
+        .author-position {
+          font-size: 0.875rem;
+          color: #666;
+        }
+      }
+    }
+  }

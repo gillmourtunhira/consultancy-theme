@@ -53,11 +53,15 @@ add_action('after_setup_theme', 'consultancy_setup');
 
 // Enqueue scripts and styles
 function consultancy_scripts() {
+
+    // Enqueue google font
+    wp_enqueue_style('google-font', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap', array(), null);
+
     // Enqueue styles
     wp_enqueue_style(
         'consultancy-style',
         get_template_directory_uri() . '/dist/css/main.min.css',
-        [],
+        array('google-font'),
         file_exists(get_template_directory() . '/dist/css/main.min.css') 
             ? filemtime(get_template_directory() . '/dist/css/main.min.css') 
             : null
@@ -115,10 +119,10 @@ add_filter('excerpt_length', 'consultancy_excerpt_length');
 function consultancy_excerpt_more($more) {
     return '...';
 }
-add_filter('excerpt_more', 'web_consultancy_excerpt_more');
+add_filter('excerpt_more', 'consultancy_excerpt_more');
 
 // Include custom navigation walker
-require_once get_template_directory() . '/inc/class-web-consultancy-nav-walker.php';
+require_once get_template_directory() . '/inc/class-consultancy-nav-walker.php';
 
 // Include custom styles for the block editor
 require_once get_template_directory() . '/inc/block-editor.php';

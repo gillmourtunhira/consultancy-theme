@@ -1,0 +1,70 @@
+// Header styles
+.header {
+    position: relative;
+    padding: 5rem 0;
+    background-color: #FFF8E5; // Light yellow background
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #fff;
+      border-radius: 100% 100% 0 0;
+    }
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .header-text {
+    flex: 1;
+    min-width: 300px;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+  }
+  
+  .header-image {
+    flex: 1;
+    min-width: 300px;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  // Client logos section
+  .client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    
+    img {
+      height: 30px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }

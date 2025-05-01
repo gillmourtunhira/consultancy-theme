@@ -1,0 +1,33 @@
+// Typography settings based on the design
+body {
+    font-family: 'Manrope', sans-serif; // Adjust based on the actual font
+    color: #333;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  // Additional heading styles
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  // Style for the yellow highlight text (seen in "Unlock your business potential")
+  .highlight {
+    color: #FFB800; // Adjust to match the yellow color in the design
+  }

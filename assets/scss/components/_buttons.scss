@@ -1,0 +1,102 @@
+// Button Variables
+$btn-primary-bg: #ffcc00;
+$btn-primary-color: #000000;
+$btn-primary-hover-bg: darken(#ffcc00, 10%);
+$btn-border-radius: 8px;
+$btn-padding: 12px 24px;
+$btn-font-weight: 600;
+$btn-transition: all 0.3s ease;
+
+// Base Button Styles
+.btn {
+  display: inline-block;
+  padding: $btn-padding;
+  border-radius: $btn-border-radius;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $btn-transition;
+  border: none;
+  font-family: inherit;
+  line-height: 1.5;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($btn-primary-bg, 0.5);
+  }
+}
+
+// Primary Button (Yellow/Gold)
+.btn-primary {
+  background-color: $btn-primary-bg;
+  color: $btn-primary-color;
+  
+  &:hover, &:focus {
+    background-color: $btn-primary-hover-bg;
+  }
+}
+
+// Secondary Button (Outlined)
+.btn-secondary {
+  background-color: transparent;
+  color: $btn-primary-color;
+  border: 2px solid $btn-primary-bg;
+  
+  &:hover, &:focus {
+    background-color: rgba($btn-primary-bg, 0.1);
+  }
+}
+
+// Button Sizes
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+}
+
+// Full Width Button
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Button with Icon
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  svg, img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Button Group
+.btn-group {
+  display: flex;
+  gap: 12px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+// CTA Button (for main calls to action)
+.btn-cta {
+  @extend .btn-primary;
+  @extend .btn-lg;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}

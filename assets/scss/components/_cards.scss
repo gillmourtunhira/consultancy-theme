@@ -1,0 +1,79 @@
+// Card styles
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    margin-bottom: 1.5rem;
+  }
+  
+  // Service card styles
+  .service-card {
+    text-align: center;
+    padding: 2rem;
+    
+    .service-icon {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  // Team member card styles
+  .team-card {
+    text-align: center;
+    
+    .team-img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .team-name {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .team-position {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  // Portfolio/works card styles
+  .portfolio-card {
+    position: relative;
+    
+    .portfolio-img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  }

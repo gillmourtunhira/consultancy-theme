@@ -1,0 +1,35 @@
+// Accordion styles (FAQ section)
+.accordion {
+    margin-bottom: 2rem;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .accordion-header {
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &:after {
+      content: '+';
+      font-size: 1.5rem;
+      color: #FFB800;
+    }
+    
+    &.active:after {
+      content: '-';
+    }
+  }
+  
+  .accordion-content {
+    padding: 0 0 1.5rem;
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+  }

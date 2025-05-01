@@ -1,0 +1,178 @@
+// Home page specific styles
+.hero-section {
+    position: relative;
+    padding: 6rem 0;
+    background-color: #FFF8E5; // Light yellow background
+    overflow: hidden;
+    
+    .decorator-shape {
+      position: absolute;
+      z-index: 0;
+      
+      &.shape-1 {
+        top: 10%;
+        left: 5%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 184, 0, 0.3);
+      }
+      
+      &.shape-2 {
+        bottom: 20%;
+        right: 10%;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgba(255, 184, 0, 0.2);
+      }
+    }
+  }
+  
+  .services-section {
+    padding: 5rem 0;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+  }
+  
+  .about-section {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+        padding-right: 3rem;
+        
+        @media (max-width: 768px) {
+          padding-right: 0;
+          margin-bottom: 2rem;
+        }
+      }
+      
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  
+  .stats-section {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .portfolio-section {
+    padding: 5rem 0;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  }
+  
+  .testimonial-section {
+    background-color: #f9f9f9;
+  }
+  
+  .team-section {
+    padding: 5rem 0;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+  }
+  
+  .blog-section {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  }
+  
+  .faq-section {
+    padding: 5rem 0;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .contact-section {
+    padding: 5rem 0;
+    background-color: #FFF8E5;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .contact-form-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+  }
+  
+  .newsletter-section {
+    padding: 5rem 0;
+    background-color: #FFB800;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+    
+    .newsletter-form-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }

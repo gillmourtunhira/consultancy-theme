@@ -1,0 +1,87 @@
+// Footer styles
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 5rem 0 2rem;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-logo {
+    margin-bottom: 1.5rem;
+    
+    img {
+      height: 40px;
+    }
+  }
+  
+  .footer-widget {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 2rem;
+    
+    h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 0.75rem;
+        
+        a {
+          color: #aaa;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: #FFB800;
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    p {
+      color: #aaa;
+      margin: 0;
+    }
+  }
+  
+  .social-links {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      margin-right: 0.75rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #FFB800;
+      }
+    }
+  }
