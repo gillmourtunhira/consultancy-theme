@@ -1,0 +1,37 @@
+/*
+Theme Name: Consultancy Theme
+Author: Gillmour Tunhira
+Version: 1.0.0
+Description: Custom WordPress theme for web consultancy
+*/
+
+// Base styles
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/utilities';
+
+// Components
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/cards';
+@import 'components/navigation';
+@import 'components/accordion';
+@import 'components/stats';
+@import 'components/testimonials';
+@import 'components/pagination';
+
+// Layout
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/grid';
+@import 'layouts/sidebar';
+
+// Pages
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/services';
+@import 'pages/portfolio';
+@import 'pages/blog';
+@import 'pages/contact';

@@ -1,0 +1,20 @@
+# Ignore node_modules and bower_components
+/node_modules
+/bower_components
+
+# Ignore Sass and JavaScript source maps
+/dist/css/*.map
+/dist/js/*.map
+
+# Ignore PHPStorm project settings
+/.idea
+
+# Ignore Composer vendor directory
+/vendor
+
+# Ignore WordPress core files
+/wp-admin
+/wp-includes
+
+# Ignore yarn.lock
+/yarn.lock
