@@ -58,23 +58,14 @@ function consultancy_scripts() {
     wp_enqueue_style('google-font', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap', array(), null);
 
     // Enqueue styles
-    wp_enqueue_style(
-        'consultancy-style',
-        get_template_directory_uri() . '/dist/css/main.min.css',
-        array('google-font'),
-        file_exists(get_template_directory() . '/dist/css/main.min.css') 
-            ? filemtime(get_template_directory() . '/dist/css/main.min.css') 
-            : null
-    );
+    wp_enqueue_style( 'consultancy-style', get_template_directory_uri() . '/dist/css/main.min.css', array('google-font'), time() );
 
     // Enqueue scripts
     wp_enqueue_script(
         'consultancy-scripts',
         get_template_directory_uri() . '/dist/js/main.min.js',
         ['jquery'],
-        file_exists(get_template_directory() . '/dist/js/main.min.js') 
-            ? filemtime(get_template_directory() . '/dist/js/main.min.js') 
-            : null,
+        time(),
         true
     );
 
@@ -138,3 +129,41 @@ require_once get_template_directory() . '/inc/post-types.php';
 
 // Include customizer options
 require_once get_template_directory() . '/inc/customizer.php';
+
+
+// SVG support
+function add_svg_support( $file_types ) {
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    return array_merge( $file_types, $new_filetypes );
+}
+add_filter( 'upload_mimes', 'add_svg_support' );
+
+function svg_sanitization( $data, $file, $filename, $mimes ) {
+    // Check if file is SVG
+    if ( ! empty( $data['ext'] ) && $data['ext'] === 'svg' ) {
+        if ( $data['type'] === 'image/svg+xml' ) {
+            // Validate SVG content
+            $content = file_get_contents( $file );
+            // Basic security check - look for script tags or dangerous attributes
+            if ( preg_match( '/.*?<script.*?>.*?<\/script>.*?/is', $content ) || 
+                 preg_match( '/.*?(onload|onerror|onclick|onmouseover)=.*?/is', $content ) ) {
+                $data['ext'] = '';
+                $data['type'] = '';
+            }
+        }
+    }
+    return $data;
+}
+add_filter( 'wp_check_filetype_and_ext', 'svg_sanitization', 10, 4 );
+
+function display_svg_in_media_library() {
+    echo '
+    <style>
+        .attachment-266x266, .thumbnail img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>';
+}
+add_action( 'admin_head', 'display_svg_in_media_library' );

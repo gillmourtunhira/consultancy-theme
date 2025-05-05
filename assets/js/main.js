@@ -1,12 +1,11 @@
-/**
- * Main JavaScript file for Consultancy Theme
- */
+// Main JavaScript file for Consultancy Theme
 
 (function($) {
     'use strict';
   
     // Document Ready
     $(document).ready(function() {
+
       initMobileMenu();
       initStickyHeader();
       initFaqAccordion();
@@ -18,45 +17,55 @@
      * Mobile Menu Functionality
      */
     function initMobileMenu() {
-      const menuToggle = $('.menu-toggle');
-      const navMenu = $('.nav-menu');
-      
-      menuToggle.on('click', function() {
+      const $menuToggle = $('.menu-toggle');
+      const $navMenu = $('.nav-menu');
+      const $mobileMenuOverlay = $('.mobile-menu-overlay');
+    
+      // Toggle main menu
+      $menuToggle.on('click', function() {
         $(this).toggleClass('active');
-        navMenu.toggleClass('active');
+        $navMenu.toggleClass('active');
         $('body').toggleClass('menu-open');
+        $mobileMenuOverlay.toggleClass('active');
       });
-      
+    
       // Close menu when clicking outside
       $(document).on('click', function(e) {
-        if (!navMenu.is(e.target) && navMenu.has(e.target).length === 0 && 
-            !menuToggle.is(e.target) && menuToggle.has(e.target).length === 0) {
-          navMenu.removeClass('active');
-          menuToggle.removeClass('active');
+        if (
+          !$navMenu.is(e.target) && $navMenu.has(e.target).length === 0 &&
+          !$menuToggle.is(e.target) && $menuToggle.has(e.target).length === 0
+        ) {
+          $navMenu.removeClass('active');
+          $menuToggle.removeClass('active');
           $('body').removeClass('menu-open');
+          $mobileMenuOverlay.removeClass('active');
         }
       });
-      
-      // Handle submenu toggle on mobile
-      $('.menu-item-has-children > a').on('click', function(e) {
-        if (window.innerWidth < 1024) {
-          e.preventDefault();
-          $(this).parent().toggleClass('submenu-open');
-          $(this).next('.sub-menu').slideToggle(200);
+    
+      // Submenu toggle on mobile
+      $(document).on('click', '.menu-item-has-children > a', function(e) {
+        if (window.innerWidth <= 1024) {
+          const $submenu = $(this).next('.sub-menu');
+          if ($submenu.length) {
+            e.preventDefault();
+            $(this).parent().toggleClass('submenu-open');
+            $submenu.stop(true, true).slideToggle(200);
+          }
         }
       });
-      
-      // Adjust menu on resize
+    
+      // Reset menu on resize
       $(window).on('resize', function() {
-        if (window.innerWidth >= 1024) {
-          navMenu.removeClass('active');
-          menuToggle.removeClass('active');
+        if (window.innerWidth > 1024) {
+          $navMenu.removeClass('active');
+          $menuToggle.removeClass('active');
           $('body').removeClass('menu-open');
-          $('.sub-menu').removeAttr('style');
           $('.menu-item-has-children').removeClass('submenu-open');
+          $('.sub-menu').removeAttr('style');
         }
       });
     }
+    
   
     /**
      * Sticky Header

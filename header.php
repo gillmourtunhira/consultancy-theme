@@ -53,6 +53,7 @@
                 ));
                 ?>
             </nav><!-- #site-navigation -->
+            <div class="mobile-menu-overlay"></div>
         </div><!-- .container -->
     </header><!-- #masthead -->
 
