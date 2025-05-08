@@ -1,4 +1,7 @@
 // Card styles
+
+@use 'base/variables' as vars;
+
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -29,12 +32,19 @@
   .service-card {
     text-align: center;
     padding: 2rem;
+    border: 1px solid #000;
+    background: vars.$color-green;
+    box-shadow: 5px 5px 0px vars.$color-yellow;
+    color: #000000;
+    border-radius: 4px;
     
     .service-icon {
-      display: inline-block;
+      img{
+        display: inline-block;
       width: 80px;
       height: 80px;
       margin-bottom: 1.5rem;
+      }
     }
   }
   

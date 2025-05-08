@@ -1,12 +1,16 @@
 <?php
-
 get_header();
+?>
 
-while (have_posts()) {
-    the_post();
-    the_content();
-}
+<div class="page-content my-5">
+    <div class="container">
+        <?php
+            the_content();
+        ?>
+    </div>
+</div>
 
+<?php
 get_footer();
 ?>
 

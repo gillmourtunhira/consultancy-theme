@@ -1,4 +1,6 @@
 // Accordion styles (FAQ section)
+@use 'base/variables' as vars;
+
 .accordion {
     margin-bottom: 2rem;
   }
@@ -17,7 +19,7 @@
     &:after {
       content: '+';
       font-size: 1.5rem;
-      color: #FFB800;
+      color: vars.$color-yellow;
     }
     
     &.active:after {

@@ -5,33 +5,35 @@ Version: 1.0.0
 Description: Custom WordPress theme for web consultancy
 */
 
+@use 'sass:color';
+
 // Base styles
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/normalize';
-@import 'base/typography';
-@import 'base/utilities';
+@use 'base/variables' as vars;
+@use 'base/mixins';
+@use 'base/normalize';
+@use 'base/typography';
+@use 'base/utilities';
 
 // Components
-@import 'components/buttons';
-@import 'components/forms';
-@import 'components/cards';
-@import 'components/navigation';
-@import 'components/accordion';
-@import 'components/stats';
-@import 'components/testimonials';
-@import 'components/pagination';
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/cards';
+@use 'components/navigation';
+@use 'components/accordion';
+@use 'components/stats';
+@use 'components/testimonials';
+@use 'components/pagination';
 
 // Layout
-@import 'layouts/header';
-@import 'layouts/footer';
-@import 'layouts/grid';
-@import 'layouts/sidebar';
+@use 'layouts/header';
+@use 'layouts/footer';
+@use 'layouts/grid';
+@use 'layouts/sidebar';
 
 // Pages
-@import 'pages/home';
-@import 'pages/about';
-@import 'pages/services';
-@import 'pages/portfolio';
-@import 'pages/blog';
-@import 'pages/contact';
+@use 'pages/home';
+@use 'pages/about';
+@use 'pages/services';
+@use 'pages/portfolio';
+@use 'pages/blog';
+@use 'pages/contact';

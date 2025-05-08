@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Utility classes
 .container {
     width: 100%;
@@ -37,7 +39,7 @@
     color: #333;
     
     &:hover {
-      background-color: darken(#FFB800, 10%);
+      background-color: color.scale(#FFB800, $lightness: -10%);
     }
   }
   

@@ -1,4 +1,6 @@
 // Home page specific styles
+@use 'base/variables' as vars;
+
 .hero-section {
     position: relative;
     padding: 6rem 0;
@@ -27,14 +29,71 @@
         background-color: rgba(255, 184, 0, 0.2);
       }
     }
+    .tagline{
+      position: absolute;
+
+      &-text{
+        position: relative;
+        padding-left: 1.5em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: '✦';
+          position: absolute;
+          left: 0;
+          // top: -3em;
+          color: vars.$color-yellow; // or any color you'd like
+          font-size: 1.4em; // adjust as needed
+          line-height: 1;
+        }
+      }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      
+      .hero-text {
+        a.button{
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background-color: vars.$color-green;
+          color: vars.$color-white;
+          border-radius: 4px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          box-shadow: 5px 5px 0px vars.$color-yellow;
+          
+          &:hover {
+            background-color: vars.$color-yellow;
+            box-shadow: 5px 5px 0px vars.$color-green;
+            color: vars.$color-black;
+          }
+        }
+      }
+      
+      .hero-image {
+        img.hero-image {
+          width: 100%;
+          height: auto;
+          // border-radius: 8px;
+        }
+      }
+    }
   }
   
   .services-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     
     .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
+      // text-align: center;
+      // margin-bottom: 3rem;
     }
     
     .services-grid {
@@ -176,3 +235,61 @@
       margin: 0 auto;
     }
   }
+
+  // .stack-logos{
+  //   .stack-logo{
+  //     img, svg {
+  //       // max-width: 80%;
+  //       // max-height: 60px;
+  //       // width: auto;
+  //       // height: auto;
+  //       fill: #009688; // For SVGs with fill attribute
+  //       color: #009688; // For SVGs using currentColor
+  //       filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%) hue-rotate(143deg) brightness(87%) contrast(101%); // For images and other SVGs
+  //     } 
+  //   }
+  // }
+
+  // Logos
+  // .stack-logos {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: center;
+  //   gap: 30px;
+  //   margin: 40px 0;
+  // }
+  
+  // .stack-logo {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   height: 100px;
+  //   width: 160px;
+  //   background-color: #fff;
+  //   border-radius: 8px;
+  //   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  //   transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+  //   &:hover {
+  //     transform: translateY(-5px);
+  //     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  //   }
+    
+  //   img {
+  //     max-width: 80%;
+  //     max-height: 60px;
+  //     width: auto;
+  //     height: auto;
+  //   }
+  // }
+  
+  // @media (max-width: 768px) {
+  //   .stack-logos {
+  //     gap: 20px;
+  //   }
+    
+  //   .stack-logo {
+  //     width: 130px;
+  //     height: 80px;
+  //   }
+  // }

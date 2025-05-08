@@ -5,7 +5,7 @@
   
     // Document Ready
     $(document).ready(function() {
-
+      // Initialize functions
       initMobileMenu();
       initStickyHeader();
       initFaqAccordion();

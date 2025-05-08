@@ -1,6 +1,9 @@
 // Typography settings based on the design
+
+@use 'base/variables' as vars;
+
 body {
-    font-family: 'Manrope', sans-serif; // Adjust based on the actual font
+    font-family: vars.$font-family-primary; // Adjust based on the actual font
     color: #333;
   }
   
@@ -29,5 +32,22 @@ body {
   
   // Style for the yellow highlight text (seen in "Unlock your business potential")
   .highlight {
-    color: #FFB800; // Adjust to match the yellow color in the design
+    color: vars.$color-yellow; // Adjust to match the yellow color in the design
+  }
+
+  .my-5 {
+    margin-top: vars.$space-12;
+    margin-bottom: vars.$space-12;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .text-left {
+    text-align: left !important;
+  }
+
+  .text-right {
+    text-align: right !important;
   }

@@ -1,7 +1,9 @@
+@use 'sass:color';
+
 // Button Variables
 $btn-primary-bg: #ffcc00;
 $btn-primary-color: #000000;
-$btn-primary-hover-bg: darken(#ffcc00, 10%);
+$btn-primary-hover-bg: color.scale(#ffcc00, $lightness: -10%);
 $btn-border-radius: 8px;
 $btn-padding: 12px 24px;
 $btn-font-weight: 600;

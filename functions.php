@@ -5,6 +5,30 @@
  * @package Consultancy_Theme
  */
 
+// Include custom navigation walker
+require_once get_template_directory() . '/inc/class-consultancy-nav-walker.php';
+
+// Include custom styles for the block editor
+require_once get_template_directory() . '/inc/block-editor.php';
+
+// Include custom functions
+require_once get_template_directory() . '/inc/template-functions.php';
+
+// Include custom template tags
+require_once get_template_directory() . '/inc/template-tags.php';
+
+// Register custom post types and taxonomies
+require_once get_template_directory() . '/inc/post-types.php';
+
+// Include customizer options
+require_once get_template_directory() . '/inc/customizer.php';
+
+// Include custom meta fields
+require_once get_template_directory() . '/inc/meta-fields.php';
+
+// Include theme options
+require_once get_template_directory() . '/inc/theme-options.php';
+
 // Theme setup
 function consultancy_setup() {
     // Add default posts and comments RSS feed links to head
@@ -54,6 +78,9 @@ add_action('after_setup_theme', 'consultancy_setup');
 // Enqueue scripts and styles
 function consultancy_scripts() {
 
+    wp_enqueue_script('wplink'); // Link modal
+	wp_enqueue_style('wp-link'); // Optional: link modal styles
+
     // Enqueue google font
     wp_enqueue_style('google-font', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap', array(), null);
 
@@ -64,7 +91,7 @@ function consultancy_scripts() {
     wp_enqueue_script(
         'consultancy-scripts',
         get_template_directory_uri() . '/dist/js/main.min.js',
-        ['jquery'],
+        ['jquery', 'wplink'],
         time(),
         true
     );
@@ -111,25 +138,6 @@ function consultancy_excerpt_more($more) {
     return '...';
 }
 add_filter('excerpt_more', 'consultancy_excerpt_more');
-
-// Include custom navigation walker
-require_once get_template_directory() . '/inc/class-consultancy-nav-walker.php';
-
-// Include custom styles for the block editor
-require_once get_template_directory() . '/inc/block-editor.php';
-
-// Include custom functions
-require_once get_template_directory() . '/inc/template-functions.php';
-
-// Include custom template tags
-require_once get_template_directory() . '/inc/template-tags.php';
-
-// Register custom post types and taxonomies
-require_once get_template_directory() . '/inc/post-types.php';
-
-// Include customizer options
-require_once get_template_directory() . '/inc/customizer.php';
-
 
 // SVG support
 function add_svg_support( $file_types ) {

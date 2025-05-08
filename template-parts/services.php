@@ -1,42 +1,35 @@
+<?php
+
+// Get Service CPT posts
+
+$args = array(
+    'post_type' => 'service',
+    'posts_per_page' => 4,
+    'orderby' => 'date',
+    'order' => 'DESC'
+);
+
+$query = new WP_Query($args);
+
+?>
+
 <section class="services-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Providing best service</h2>
-                <a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" class="button button-secondary">All Services</a>
+            <div class="section-header text-left">
+                <h2 class="section-title"><?php echo __('Providing best service', 'consultancy'); ?></h2>
+                <p class="section-subtitle"><?php echo __('We offer a range of services to help you grow your business and achieve your goals.', 'consultancy'); ?></p>
             </div>
             
             <div class="services-grid">
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-web.svg" alt="Web Design Icon">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                     </div>
-                    <h3 class="service-title">Web Design</h3>
-                    <p class="service-description">Custom designed websites that reflect your brand's unique identity.</p>
+                    <h3 class="service-title"><?php the_title(); ?></h3>
+                    <p class="service-description"><?php the_excerpt(); ?></p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-development.svg" alt="Development Icon">
-                    </div>
-                    <h3 class="service-title">Development</h3>
-                    <p class="service-description">Powerful web applications built with modern technologies.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-brand.svg" alt="Brand Design Icon">
-                    </div>
-                    <h3 class="service-title">Brand Design</h3>
-                    <p class="service-description">Logo and brand identity creation that makes a lasting impression.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-marketing.svg" alt="Marketing Icon">
-                    </div>
-                    <h3 class="service-title">Marketing</h3>
-                    <p class="service-description">Digital marketing strategies that drive traffic and conversions.</p>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
