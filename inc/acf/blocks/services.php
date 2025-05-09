@@ -13,6 +13,7 @@ return [
       'label' => 'Content',
       'name' => 'content',
       'type' => 'wysiwyg',
+      'media_upload' => 0,
       'required' => 0,
     ],
     [

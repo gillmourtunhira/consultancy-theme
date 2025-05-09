@@ -26,7 +26,7 @@ return [
         'label' => 'Screen Size',
         'type' => 'select',
         'instructions' => 'Select the hero screen size',
-        'required' => 1,
+        'required' => 0,
         'choices' => [
             '' => 'Default',
             'half' => 'Half',
@@ -45,12 +45,17 @@ return [
         'required' => 0,
         'instructions' => 'Select the background color style',
         'choices' => [
-            'primary' => 'Primary Color',
+            'muted-yellow' => 'Muted Yellow',
+            'yellow' => 'Yellow',
+            'primary' => 'Orange',
             'secondary' => 'Secondary Color',
-            'dark' => 'Dark',
-            'light' => 'Light',
+            'green' => 'Green',
+            'black' => 'Black',
+            'white' => 'White',
+            'background' => 'Light',
             'accent' => 'Accent Color',
         ],
+        'default_value' => 'muted-yellow',
         'wrapper' => [
             'width' => '50',
         ],
@@ -60,7 +65,7 @@ return [
         'name' => 'content_alignment',
         'label' => 'Content Alignment',
         'type' => 'select',
-        'required' => 1,
+        'required' => 0,
         'instructions' => 'Select the content alignment',
         'choices' => [
             'left' => 'Left',
@@ -84,6 +89,7 @@ return [
         'name' => 'content',
         'label' => 'Content',
         'type' => 'wysiwyg',
+        'media_upload' => 0,
         'required' => 1,
     ],
     [
