@@ -94,34 +94,77 @@ function consultancy_testimonial_post_type() {
 }
 add_action( 'init', 'consultancy_testimonial_post_type' );
 
-// Team CPT
-function consultancy_team_post_type() {
-    register_post_type( 'team',
-        array(
-            'labels' => array(
-                'name_admin_bar' => 'Team',
-                'name' => __( 'Teams' ),
-                'singular_name' => __( 'Team' ),
-                'menu_name' => __( 'Teams' ),
-                'all_items' => __( 'All Teams' ),
-                'add_new' => __( 'Add New Team' ),
-                'add_new_item' => __( 'Add New Team' ),
-                'edit_item' => __( 'Edit Team' ),
-                'new_item' => __( 'New Team' ),
-                'view_item' => __( 'View Team' ),
-                'search_items' => __( 'Search Teams' ),
-                'not_found' => __( 'No Teams found' ),
-                'not_found_in_trash' => __( 'No Teams found in trash' ),
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt' ),
-            'capability_type' => 'post',
-            'hierarchical' => false,
-            'menu_icon' => get_template_directory_uri() . '/assets/images/icons/team_icon.svg',
-            'menu_position' => 5,
-            'rewrite' => array( 'slug' => 'teams' ),
-        )
+// // Team CPT
+// function consultancy_team_post_type() {
+//     register_post_type( 'team',
+//         array(
+//             'labels' => array(
+//                 'name_admin_bar' => 'Team',
+//                 'name' => __( 'Teams' ),
+//                 'singular_name' => __( 'Team' ),
+//                 'menu_name' => __( 'Teams' ),
+//                 'all_items' => __( 'All Teams' ),
+//                 'add_new' => __( 'Add New Team' ),
+//                 'add_new_item' => __( 'Add New Team' ),
+//                 'edit_item' => __( 'Edit Team' ),
+//                 'new_item' => __( 'New Team' ),
+//                 'view_item' => __( 'View Team' ),
+//                 'search_items' => __( 'Search Teams' ),
+//                 'not_found' => __( 'No Teams found' ),
+//                 'not_found_in_trash' => __( 'No Teams found in trash' ),
+//             ),
+//             'public' => true,
+//             'has_archive' => true,
+//             'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt' ),
+//             'capability_type' => 'post',
+//             'hierarchical' => false,
+//             'menu_icon' => get_template_directory_uri() . '/assets/images/icons/team_icon.svg',
+//             'menu_position' => 5,
+//             'rewrite' => array( 'slug' => 'teams' ),
+//         )
+//     );
+// }
+// add_action( 'init', 'consultancy_team_post_type' );
+
+
+/**
+ * Register Custom Post Type for Partials
+ */
+function create_partials_post_type() {
+    $labels = array(
+        'name'               => _x( 'Partials', 'post type general name', 'textdomain' ),
+        'singular_name'      => _x( 'Partial', 'post type singular name', 'textdomain' ),
+        'menu_name'          => _x( 'Partials', 'admin menu', 'textdomain' ),
+        'name_admin_bar'     => _x( 'Partial', 'add new on admin bar', 'textdomain' ),
+        'add_new'            => _x( 'Add New', 'partial', 'textdomain' ),
+        'add_new_item'       => __( 'Add New Partial', 'textdomain' ),
+        'new_item'           => __( 'New Partial', 'textdomain' ),
+        'edit_item'          => __( 'Edit Partial', 'textdomain' ),
+        'view_item'          => __( 'View Partial', 'textdomain' ),
+        'all_items'          => __( 'All Partials', 'textdomain' ),
+        'search_items'       => __( 'Search Partials', 'textdomain' ),
+        'parent_item_colon'  => __( 'Parent Partials:', 'textdomain' ),
+        'not_found'          => __( 'No partials found.', 'textdomain' ),
+        'not_found_in_trash' => __( 'No partials found in Trash.', 'textdomain' )
     );
+
+    $args = array(
+        'labels'             => $labels,
+        'description'        => __( 'Reusable content blocks for your website', 'textdomain' ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'partial' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => get_template_directory_uri() . '/assets/images/icons/partial.svg',
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' )
+    );
+
+    register_post_type( 'partial', $args );
 }
-add_action( 'init', 'consultancy_team_post_type' );
+add_action( 'init', 'create_partials_post_type' );

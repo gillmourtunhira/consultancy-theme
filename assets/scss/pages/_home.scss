@@ -6,6 +6,20 @@
     padding: 6rem 0;
     background-color: #FFF8E5; // Light yellow background
     overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100px; // adjust as needed
+    //   background-color: #FFF8E5;
+    //   transform: skewY(-3deg);
+    //   transform-origin: top left;
+    //   z-index: 1;
+    // }
     
     .decorator-shape {
       position: absolute;
@@ -88,23 +102,32 @@
     }
   }
   
-  .services-section {
-    padding: 3rem 0;
-    
-    .section-title {
-      // text-align: center;
-      // margin-bottom: 3rem;
-    }
-    
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 2rem;
-    }
+  // Services Section
+
+  .section-header{
+    margin-bottom: 2rem;
   }
   
+  .services-section {
+    padding: 1rem 0 3rem;
+    
+    .section-title {
+      margin-bottom: 0rem;
+        // text-align: center;
+        // margin-bottom: 3rem;
+      }
+      
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+    }
+
+  // About Section
+
   .about-section {
-    padding: 5rem 0;
+    // padding: 5rem 0;
     background-color: #f9f9f9;
     
     .about-content {
@@ -115,7 +138,17 @@
       .about-text {
         flex: 1;
         min-width: 300px;
-        padding-right: 3rem;
+        padding: 0 3rem;
+
+        .section-label{
+          background: vars.$color-yellow;
+          margin-bottom: .5rem;
+          width: fit-content;
+          padding: .3rem 1rem;
+          border-radius: 40px;
+          font-size: .8rem;
+          font-weight: 500;
+        }
         
         @media (max-width: 768px) {
           padding-right: 0;
@@ -124,11 +157,13 @@
       }
       
       .about-image {
-        flex: 1;
+        flex: 0;
         min-width: 300px;
         
         img {
+          display: block;
           width: 100%;
+          max-width: 345px;
           height: auto;
           border-radius: 8px;
         }

@@ -1,17 +1,21 @@
-<?php
-get_header();
-?>
-
-<div class="page-content my-5">
-    <div class="container">
-        <?php
-            the_content();
-        ?>
-    </div>
-</div>
+<?php get_header(); ?>
 
 <?php
-get_footer();
+
+if( have_rows('flexible_content') ):
+
+     // loop through the rows of data
+    while ( have_rows('flexible_content') ) : the_row();
+
+        include 'partials/blocks/' . get_row_layout() . '.php';
+
+    endwhile;
+
+else :
+
+    // no layouts found
+
+endif;
 ?>
 
-
+<?php get_footer();

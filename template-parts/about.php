@@ -2,7 +2,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-image.jpg" alt="Team member">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/executive.png" alt="Team member">
                 </div>
                 <div class="about-text">
                     <div class="section-label">About Us</div>

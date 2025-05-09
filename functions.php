@@ -24,10 +24,13 @@ require_once get_template_directory() . '/inc/post-types.php';
 require_once get_template_directory() . '/inc/customizer.php';
 
 // Include custom meta fields
-require_once get_template_directory() . '/inc/meta-fields.php';
+// require_once get_template_directory() . '/inc/meta-fields.php';
 
 // Include theme options
 require_once get_template_directory() . '/inc/theme-options.php';
+
+// Include ACF
+require_once get_template_directory() . '/inc/acf.php';
 
 // Theme setup
 function consultancy_setup() {
@@ -175,3 +178,5 @@ function display_svg_in_media_library() {
     </style>';
 }
 add_action( 'admin_head', 'display_svg_in_media_library' );
+
+
