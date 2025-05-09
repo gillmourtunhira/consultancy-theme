@@ -1,4 +1,4 @@
-<section class="about-section" id="about">
+<section class="about-section bg-muted-white" id="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-image">

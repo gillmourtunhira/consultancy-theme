@@ -8,7 +8,7 @@
     $screen_size = get_sub_field('screen_size');
 ?>
 <!-- Hero Section -->
-<section class="hero-section hero-<?php echo esc_attr($screen_size); ?>">
+<section class="hero-section bg-<?php echo esc_attr($background_color); ?> hero-<?php echo esc_attr($screen_size); ?>">
         <div class="container">
             <div class="tagline">
                 <h4 class="tagline-text"><?php echo $tagline; ?></h4>

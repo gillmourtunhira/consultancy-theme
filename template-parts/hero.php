@@ -8,7 +8,7 @@
     }
 
 ?>
-<section class="hero-section">
+<section class="hero-section bg-muted-yellow hero-full">
         <div class="container">
             <div class="tagline">
                 <h4 class="tagline-text"><?php echo __('Web Crafters', 'consultancy'); ?></h4>
