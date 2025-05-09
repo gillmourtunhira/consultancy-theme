@@ -51,3 +51,28 @@ body {
   .text-right {
     text-align: right !important;
   }
+
+  // Background Colors
+.bg-primary { background-color: vars.$color-primary; }
+.bg-green { background-color: vars.$color-green; }
+.bg-yellow { background-color: vars.$color-yellow; }
+.bg-secondary { background-color: vars.$color-secondary; }
+.bg-accent { background-color: vars.$color-accent; }
+.bg-white { background-color: vars.$color-white; }
+.bg-muted-white { background-color: vars.$color-muted-white; }
+.bg-black { background-color: vars.$color-black; }
+.bg-border { background-color: vars.$color-border; }
+.bg-text { background-color: vars.$color-text; }
+.bg-muted-yellow { background-color: vars.$color-muted-yellow; }
+
+
+// Text Colors
+.text-primary { color: vars.$color-primary; }
+.text-green { color: vars.$color-green; }
+.text-yellow { color: vars.$color-yellow; }
+.text-secondary { color: vars.$color-secondary; }
+.text-accent { color: vars.$color-accent; }
+.text-white { color: vars.$color-white; }
+.text-black { color: vars.$color-black; }
+.text-border { color: vars.$color-border; }
+.text-text { color: vars.$color-text; }
