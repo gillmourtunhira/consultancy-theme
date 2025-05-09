@@ -32,6 +32,9 @@ require_once get_template_directory() . '/inc/theme-options.php';
 // Include ACF
 require_once get_template_directory() . '/inc/acf.php';
 
+// Include shortcodes
+require_once get_template_directory() . '/inc/shortcodes.php';
+
 // Theme setup
 function consultancy_setup() {
     // Add default posts and comments RSS feed links to head

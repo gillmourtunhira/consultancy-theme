@@ -15,7 +15,7 @@ return [
         'label' => 'Image / Video',
         'type' => 'file',
         'required' => 1,
-        'mime_types' => 'mp4,jpeg,jpg,png',
+        'mime_types' => 'jpeg,jpg,png',
         'wrapper' => [
             'width' => '50',
         ],
