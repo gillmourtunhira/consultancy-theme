@@ -38,7 +38,7 @@ function services_block_shortcode($atts) {
     $query = new WP_Query($query_args);
 
     ob_start(); ?>
-
+    <!-- Services Block -->
     <section class="services-section">
         <div class="container">
             <?php if ($content): ?>
@@ -70,7 +70,7 @@ function services_block_shortcode($atts) {
             <?php endif; ?>
         </div>
     </section>
-
+    <!-- End Services Block -->
     <?php return ob_get_clean();
 }
 add_shortcode('services_block', 'services_block_shortcode');
