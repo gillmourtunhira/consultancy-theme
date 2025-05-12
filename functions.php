@@ -35,6 +35,9 @@ require_once get_template_directory() . '/inc/acf.php';
 // Include shortcodes
 require_once get_template_directory() . '/inc/shortcodes.php';
 
+// Include utilities
+require_once get_template_directory() . '/inc/utilities.php';
+
 // Theme setup
 function consultancy_setup() {
     // Add default posts and comments RSS feed links to head
@@ -181,5 +184,3 @@ function display_svg_in_media_library() {
     </style>';
 }
 add_action( 'admin_head', 'display_svg_in_media_library' );
-
-
