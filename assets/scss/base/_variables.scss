@@ -95,3 +95,87 @@ $z-index-tooltip: 1070;
 // Grid
 $grid-columns: 12;
 $grid-gutter: $space-6;
+
+@use 'sass:meta';
+
+// Utility classes for margins and paddings
+// Based on Bootstrap-style naming: m-1, my-1, mx-1, p-1, py-1, px-1
+
+// Map spacing variables to numeric values
+$spacers: (
+  1: $space-1,  // 0.25rem (4px)
+  2: $space-2,  // 0.5rem (8px)
+  3: $space-3,  // 0.75rem (12px)
+  4: $space-4,  // 1rem (16px)
+  5: $space-5,  // 1.25rem (20px)
+);
+
+// Properties
+$spacing-props: (
+  m: margin, 
+  p: padding
+);
+
+// Sides
+$spacing-sides: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  x: (left, right),
+  y: (top, bottom)
+);
+
+// Generate all spacing utility classes
+@each $prop-key, $prop-value in $spacing-props {
+  // Generate all-sides utilities (e.g., m-1, p-2)
+  @each $size-key, $size-value in $spacers {
+    .#{$prop-key}-#{$size-key} {
+      #{$prop-value}: $size-value !important;
+    }
+  }
+
+  // Generate directional utilities (e.g., mt-1, pr-2, mx-3, py-4)
+  @each $side-key, $side-value in $spacing-sides {
+    @each $size-key, $size-value in $spacers {
+      // Handle single sides (t, r, b, l)
+      @if meta.type-of($side-value) == string {
+        .#{$prop-key}#{$side-key}-#{$size-key} {
+          #{$prop-value}-#{$side-value}: $size-value !important;
+        }
+      } 
+      // Handle combined sides (x, y)
+      @else if meta.type-of($side-value) == list {
+        .#{$prop-key}#{$side-key}-#{$size-key} {
+          @each $s in $side-value {
+            #{$prop-value}-#{$s}: $size-value !important;
+          }
+        }
+      }
+    }
+  }
+  
+  // Generate auto margin utilities
+  @if $prop-key == "m" {
+    .m-auto {
+      margin: auto !important;
+    }
+
+    @each $side-key, $side-value in $spacing-sides {
+      // Handle single sides for auto (mt-auto, mr-auto, etc.)
+      @if meta.type-of($side-value) == string {
+        .m#{$side-key}-auto {
+          margin-#{$side-value}: auto !important;
+        }
+      } 
+      // Handle combined sides for auto (mx-auto, my-auto)
+      @else if meta.type-of($side-value) == list {
+        .m#{$side-key}-auto {
+          @each $s in $side-value {
+            margin-#{$s}: auto !important;
+          }
+        }
+      }
+    }
+  }
+}

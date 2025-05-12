@@ -19,7 +19,7 @@ get_header();
     <?php get_template_part('template-parts/about'); ?>
 
     <!-- Process Section -->
-    <?php get_template_part('template-parts/process'); ?>
+    <?php // get_template_part('template-parts/process'); ?>
 
     <!-- Portfolio Section -->
     <?php get_template_part('template-parts/portfolio'); ?>
