@@ -40,6 +40,7 @@ $line-height-relaxed: 1.625;
 $line-height-loose: 2;
 
 // Spacing
+$space-0: 0;          // 0px
 $space-1: 0.25rem;   // 4px
 $space-2: 0.5rem;    // 8px
 $space-3: 0.75rem;   // 12px
@@ -103,6 +104,7 @@ $grid-gutter: $space-6;
 
 // Map spacing variables to numeric values
 $spacers: (
+  0: $space-0,  // 0rem (0px)
   1: $space-1,  // 0.25rem (4px)
   2: $space-2,  // 0.5rem (8px)
   3: $space-3,  // 0.75rem (12px)

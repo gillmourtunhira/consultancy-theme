@@ -39,3 +39,14 @@
   .text-center { text-align: center; }
   .text-left { text-align: left; }
   .text-right { text-align: right; }
+
+  .section-label{
+    border-radius: 40px;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    padding: .3rem 1rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
