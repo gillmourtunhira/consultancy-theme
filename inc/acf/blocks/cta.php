@@ -27,6 +27,8 @@ return [
       'choices' => [
             'muted-yellow' => 'Muted Yellow',
             'yellow' => 'Yellow',
+            'alice-blue' => 'Alice Blue',
+            'bright-gray' => 'Bright Gray',
             'primary' => 'Orange',
             'secondary' => 'Secondary Color',
             'green' => 'Green',

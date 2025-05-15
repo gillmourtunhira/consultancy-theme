@@ -39,7 +39,7 @@ function services_block_shortcode($atts) {
 
     ob_start(); ?>
     <!-- Services Block -->
-    <section class="services-section">
+    <section class="services-section my-20">
         <div class="container">
             <?php if ($content): ?>
                 <div class="section-header text-left">

@@ -21,3 +21,6 @@
 
 /dist
 template-parts/
+
+.env
+

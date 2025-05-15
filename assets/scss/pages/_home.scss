@@ -96,7 +96,6 @@
         img.hero-image {
           width: 100%;
           height: auto;
-          // border-radius: 8px;
         }
       }
     }
@@ -108,13 +107,9 @@
     margin-bottom: 2rem;
   }
   
-  .services-section {
-    padding: 1rem 0 3rem;
-    
+  .services-section {    
     .section-title {
       margin-bottom: 0rem;
-        // text-align: center;
-        // margin-bottom: 3rem;
       }
       
       .services-grid {
@@ -126,10 +121,7 @@
 
   // About Section
 
-  .about-section {
-    // padding: 5rem 0;
-    // background-color: #f9f9f9;
-    
+  .about-section {   
     .about-content {
       display: flex;
       flex-wrap: wrap;
@@ -196,9 +188,7 @@
     background-color: #f9f9f9;
   }
   
-  .team-section {
-    padding: 5rem 0;
-    
+  .team-section {    
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
@@ -224,6 +214,13 @@
             box-shadow: 5px 5px 0 #009e8b;
           }
         }
+        &-info{
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: 1fr 60px;
+          justify-content: space-between;
+          align-items: center;
+        }
       }
     }
   }
@@ -245,7 +242,6 @@
   }
   
   .faq-section {
-    padding: 5rem 0;
     clip-path: polygon(0 0,100% 0,100% 90%,0 100%);
     
     .section-label{
@@ -319,10 +315,7 @@
     }
   }
   
-  .contact-section {
-    padding: 5rem 0;
-    background-color: #FFF8E5;
-    
+  .contact-section { 
     .section-title {
       text-align: center;
       margin-bottom: 3rem;

@@ -5,7 +5,7 @@
     $button = get_sub_field('button');
 ?>
 <!-- Accordion Block -->
-<section class="faq-section bg-black">
+<section class="faq-section bg-black py-20">
         <div class="container">
             <div class="section-header">
                 <div class="section-label text-white mb-3"><?php echo esc_html($label); ?></div>

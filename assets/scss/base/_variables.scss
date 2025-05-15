@@ -12,6 +12,8 @@ $color-muted-white: #f9f9f9;
 $color-black: #0F172A;
 $color-border: #E2E8F0;
 $color-muted-yellow: #FFF8E5;
+$color-alice-blue: #eaf7ff;
+$color-bright-gray: #E4F4F1;
 
 // Typography
 $font-family-primary: 'Manrope', sans-serif;
@@ -110,6 +112,14 @@ $spacers: (
   3: $space-3,  // 0.75rem (12px)
   4: $space-4,  // 1rem (16px)
   5: $space-5,  // 1.25rem (20px)
+  6: $space-6,  // 1.5rem (24px)
+  8: $space-8,  // 2rem (32px)
+  10: $space-10,  // 2.5rem (40px)
+  12: $space-12,  // 3rem (48px)
+  16: $space-16,  // 4rem (64px)
+  20: $space-20,  // 5rem (80px)
+  24: $space-24,  // 6rem (96px)
+  32: $space-32,  // 8rem (128px)
 );
 
 // Properties

@@ -9,7 +9,7 @@
     $anchor = get_sub_field('anchor');
 
 ?>
-<section class="about-section bg-<?php echo esc_attr($background_colour); ?>" id="<?php echo esc_attr($anchor); ?>">
+<section class="about-section bg-<?php echo esc_attr($background_colour); ?> pt-20" id="<?php echo esc_attr($anchor); ?>">
     <div class="container">
         <div class="about-content">
             <div class="about-image">

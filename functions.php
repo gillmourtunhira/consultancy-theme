@@ -184,3 +184,15 @@ function display_svg_in_media_library() {
     </style>';
 }
 add_action( 'admin_head', 'display_svg_in_media_library' );
+
+// Looking to send emails in production? Check out our Email API/SMTP product!
+function mailtrap($phpmailer) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Port = 2525;
+    $phpmailer->Username = env('MAILTRAP_USERNAME');
+    $phpmailer->Password = env('MAILTRAP_PASSWORD');
+  }
+  
+  add_action('phpmailer_init', 'mailtrap');
