@@ -191,8 +191,8 @@ function mailtrap($phpmailer) {
     $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
     $phpmailer->SMTPAuth = true;
     $phpmailer->Port = 2525;
-    $phpmailer->Username = env('MAILTRAP_USERNAME');
-    $phpmailer->Password = env('MAILTRAP_PASSWORD');
+    $phpmailer->Username = getenv('MAILTRAP_USERNAME');
+    $phpmailer->Password = getenv('MAILTRAP_PASSWORD');
   }
   
   add_action('phpmailer_init', 'mailtrap');
