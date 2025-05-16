@@ -18,7 +18,7 @@ return [
       'required' => 1,
       'tabs' => 'all',
       'toolbar' => 'full',
-      'media_upload' => 1,
+      'media_upload' => 0,
     ],
   ],
 

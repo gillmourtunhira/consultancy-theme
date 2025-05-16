@@ -1,9 +1,11 @@
 // Footer styles
 @use 'base/variables' as vars;
 
+.footer-container{
+  position: relative;
 footer{
   background-color: vars.$color-black;
-  color: vars.$color-white;
+  color: #a5a4a4;
   padding: vars.$space-5 0;
   box-shadow: vars.$shadow-sm;
   position: relative;
@@ -19,6 +21,7 @@ footer{
   }
 
   &.site-footer{
+    clip-path: polygon(0px 50px, 100% 0px, 100% 100%, 0px 100%);
     .site-info{
       &-wrapper{
         display: grid;
@@ -40,7 +43,7 @@ footer{
               list-style: none;
               margin-bottom: 1rem;
               a{
-                color: vars.$color-white;
+                color: #a5a4a4;
                 text-decoration: none;
                 transition: vars.$transition-base;
 
@@ -51,7 +54,42 @@ footer{
             }
           }
         }
+
+        .logo-wrapper{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .footer-company-logo{
+            img{
+              width: 100%;
+              max-width: 200px;
+              height: auto;
+              filter: brightness(0) invert(1);
+            }
+          }
+          .social-media-wrapper{
+            .social-media-icons{
+              .social-icons{
+                display: flex;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                li{
+                  margin-right: 1rem;
+                  list-style: none;
+                  a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
+}
 }

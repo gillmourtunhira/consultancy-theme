@@ -50,7 +50,7 @@ if (!function_exists('consultancy_register_settings')) {
 
         add_settings_field(
             'primary_color',
-            __('Primary Color', 'consultancy'),
+            __('Footer Colour', 'consultancy'),
             'consultancy_color_field_callback',
             'consultancy-theme-options',
             'consultancy_general_section'
@@ -151,6 +151,8 @@ if (!function_exists('consultancy_social_media_callback')) {
         $twitter = isset($options['twitter']) ? $options['twitter'] : '';
         $instagram = isset($options['instagram']) ? $options['instagram'] : '';
         $linkedin = isset($options['linkedin']) ? $options['linkedin'] : '';
+        $github = isset($options['github']) ? $options['github'] : '';
+        $whatsapp = isset($options['whatsapp']) ? $options['whatsapp'] : '';
         ?>
         <p>
             <label for="facebook"><?php _e('Facebook:', 'consultancy'); ?></label>
@@ -167,6 +169,14 @@ if (!function_exists('consultancy_social_media_callback')) {
         <p>
             <label for="linkedin"><?php _e('LinkedIn:', 'consultancy'); ?></label>
             <input type="url" id="linkedin" name="consultancy_theme_options[linkedin]" value="<?php echo esc_url($linkedin); ?>" class="regular-text">
+        </p>
+        <p>
+            <label for="github"><?php _e('GitHub:', 'consultancy'); ?></label>
+            <input type="url" id="github" name="consultancy_theme_options[github]" value="<?php echo esc_url($github); ?>" class="regular-text">
+        </p>
+        <p>
+            <label for="whatsapp"><?php _e('Whatsapp:', 'consultancy'); ?></label>
+            <input type="url" id="whatsapp" name="consultancy_theme_options[whatsapp]" value="<?php echo esc_url($whatsapp); ?>" class="regular-text">
         </p>
         <?php
     }
@@ -188,7 +198,7 @@ if (!function_exists('consultancy_sanitize_options')) {
             $output['footer_text'] = sanitize_text_field($input['footer_text']);
         }
 
-        $social_platforms = ['facebook', 'twitter', 'instagram', 'linkedin'];
+        $social_platforms = ['facebook', 'twitter', 'instagram', 'linkedin', 'github', 'whatsapp'];
         foreach ($social_platforms as $platform) {
             if (isset($input[$platform])) {
                 $output[$platform] = esc_url_raw($input[$platform]);
@@ -506,7 +516,7 @@ if (!function_exists('consultancy_stack_logos_callback')) {
      }
      
      // Social media URLs
-     $social_platforms = ['facebook', 'twitter', 'instagram', 'linkedin'];
+     $social_platforms = ['facebook', 'twitter', 'instagram', 'linkedin', 'github', 'whatsapp'];
      foreach ($social_platforms as $platform) {
          if (isset($input[$platform])) {
              $output[$platform] = esc_url_raw($input[$platform]);

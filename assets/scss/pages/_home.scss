@@ -99,6 +99,9 @@
         }
       }
     }
+    &.hero-full {
+      height: calc(100vh - vars.$header-height);
+    }
   }
   
   // Services Section
