@@ -63,36 +63,36 @@ function consultancy_portfolio_post_type() {
 add_action( 'init', 'consultancy_portfolio_post_type' );
 
 // Testimonial CPT
-function consultancy_testimonial_post_type() {
-    register_post_type( 'testimonial',
-        array(
-            'labels' => array(
-                'name_admin_bar' => 'Testimonial',
-                'name' => __( 'Testimonials' ),
-                'singular_name' => __( 'Testimonial' ),
-                'menu_name' => __( 'Testimonials' ),
-                'all_items' => __( 'All Testimonials' ),
-                'add_new' => __( 'Add New Testimonial' ),
-                'add_new_item' => __( 'Add New Testimonial' ),
-                'edit_item' => __( 'Edit Testimonial' ),
-                'new_item' => __( 'New Testimonial' ),
-                'view_item' => __( 'View Testimonial' ),
-                'search_items' => __( 'Search Testimonials' ),
-                'not_found' => __( 'No Testimonials found' ),
-                'not_found_in_trash' => __( 'No Testimonials found in trash' ),
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt' ),
-            'capability_type' => 'post',
-            'hierarchical' => false,
-            'menu_icon' => get_template_directory_uri() . '/assets/images/icons/testimonial.svg',
-            'menu_position' => 5,
-            'rewrite' => array( 'slug' => 'testimonials' ),
-        )
-    );
-}
-add_action( 'init', 'consultancy_testimonial_post_type' );
+// function consultancy_testimonial_post_type() {
+//     register_post_type( 'testimonial',
+//         array(
+//             'labels' => array(
+//                 'name_admin_bar' => 'Testimonial',
+//                 'name' => __( 'Testimonials' ),
+//                 'singular_name' => __( 'Testimonial' ),
+//                 'menu_name' => __( 'Testimonials' ),
+//                 'all_items' => __( 'All Testimonials' ),
+//                 'add_new' => __( 'Add New Testimonial' ),
+//                 'add_new_item' => __( 'Add New Testimonial' ),
+//                 'edit_item' => __( 'Edit Testimonial' ),
+//                 'new_item' => __( 'New Testimonial' ),
+//                 'view_item' => __( 'View Testimonial' ),
+//                 'search_items' => __( 'Search Testimonials' ),
+//                 'not_found' => __( 'No Testimonials found' ),
+//                 'not_found_in_trash' => __( 'No Testimonials found in trash' ),
+//             ),
+//             'public' => true,
+//             'has_archive' => true,
+//             'supports' => array( 'title', 'editor' ),
+//             'capability_type' => 'post',
+//             'hierarchical' => false,
+//             'menu_icon' => get_template_directory_uri() . '/assets/images/icons/testimonial.svg',
+//             'menu_position' => 5,
+//             'rewrite' => array( 'slug' => 'testimonials' ),
+//         )
+//     );
+// }
+// add_action( 'init', 'consultancy_testimonial_post_type' );
 
 // // Team CPT
 // function consultancy_team_post_type() {

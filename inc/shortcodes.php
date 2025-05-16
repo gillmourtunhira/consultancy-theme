@@ -74,3 +74,64 @@ function services_block_shortcode($atts) {
     <?php return ob_get_clean();
 }
 add_shortcode('services_block', 'services_block_shortcode');
+
+
+/**
+ * Testimonials Block Shortcode
+ *
+ * @param array $atts Shortcode attributes
+ * @return string HTML output
+ *
+ * @package Consultancy
+ * @since 1.0.0
+ *
+ */
+
+function testimonials_block_shortcode($atts) {
+    $atts = shortcode_atts([], $atts, 'testimonials_block');
+
+    // Safeguard for ACF
+    if (!function_exists('get_sub_field')) return '';
+
+    // Get ACF fields
+    $content = get_sub_field('content');
+    $number_of_posts = get_sub_field('number_of_posts') ?: 4;
+
+    // Fallback: get latest testimonials if none selected
+    $query_args = [
+        'post_type' => 'testimonial',
+        'posts_per_page' => $number_of_posts,
+        'orderby' => 'date',
+    ];
+
+    $query = new WP_Query($query_args);
+
+    ob_start(); ?>
+    <!-- Testimonials Block -->
+    <section class="testimonials-section my-20">
+        <div class="container">
+            <?php if ($content): ?>
+                <div class="section-header text-left">
+                    <?php echo wp_kses_post($content); ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="testimonials-grid">
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <?php the_content(); ?>
+                    </div>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name"><?php the_title(); ?></h3>
+                        <p class="testimonial-position"><?php echo get_post_meta(get_the_ID(), 'position', true); ?></p>
+                    </div>
+                </div>
+                <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials Block -->
+    <?php return ob_get_clean();
+}
+add_shortcode('testimonials_block', 'testimonials_block_shortcode');
