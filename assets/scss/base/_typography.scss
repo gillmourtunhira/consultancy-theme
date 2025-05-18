@@ -52,6 +52,10 @@ body {
     text-align: right !important;
   }
 
+  .d-none{
+    display: none;
+  }
+
   // Background Colors
 .bg-primary { background-color: vars.$color-primary; }
 .bg-green { background-color: vars.$color-green; }

@@ -211,5 +211,109 @@
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return regex.test(email);
     }
+
+    jQuery(document).ready(function($) {
+      $('#testimonials').sloth({
+          dots: true,
+          arrows: true,
+          autoplay: false,
+          autoplaySpeed: 5000,
+          fade: true
+      });
+  });
+
+    // Testimonials carousel
+  //   jQuery(document).ready(function($) {
+  //     // Get all testimonials
+  //     const $testimonials = $('.testimonial');
+  //     const $leftArrow = $('#testimonials-arrow-left');
+  //     const $rightArrow = $('#testimonials-arrow-right');
+  //     const $testimonialsContainer = $('.testimonials');
+      
+  //     // Initial setup
+  //     let currentIndex = 0;
+  //     let isAnimating = false;
+      
+  //     // Initialize the carousel
+  //     function initializeCarousel() {
+  //         // Make sure all testimonials are visible in the DOM but positioned absolutely
+  //         $testimonials.removeClass('active prev next');
+          
+  //         // Set initial positions
+  //         $testimonials.each(function(index) {
+  //             if (index === currentIndex) {
+  //                 $(this).addClass('active');
+  //             } else if (index < currentIndex) {
+  //                 $(this).addClass('prev');
+  //             } else {
+  //                 $(this).addClass('next');
+  //             }
+  //         });
+          
+  //         // Set container height based on active testimonial
+  //         updateContainerHeight();
+  //     }
+      
+  //     // Update container height to match active testimonial
+  //     function updateContainerHeight() {
+  //         const activeHeight = $testimonials.filter('.active').outerHeight();
+  //         $testimonialsContainer.css('height', activeHeight + 'px');
+  //     }
+      
+  //     // Navigate to previous testimonial
+  //     function goToPrevious() {
+  //         if (isAnimating) return;
+  //         isAnimating = true;
+          
+  //         const prevIndex = currentIndex;
+  //         currentIndex = (currentIndex - 1 + $testimonials.length) % $testimonials.length;
+          
+  //         // Add transition classes
+  //         $testimonials.eq(prevIndex).removeClass('active').addClass('next');
+  //         $testimonials.eq(currentIndex).removeClass('prev').addClass('active');
+          
+  //         // Update container height and release animation lock after transition
+  //         setTimeout(function() {
+  //             updateContainerHeight();
+  //             isAnimating = false;
+  //         }, 500); // Match the CSS transition duration
+  //     }
+      
+  //     // Navigate to next testimonial
+  //     function goToNext() {
+  //         if (isAnimating) return;
+  //         isAnimating = true;
+          
+  //         const prevIndex = currentIndex;
+  //         currentIndex = (currentIndex + 1) % $testimonials.length;
+          
+  //         // Add transition classes
+  //         $testimonials.eq(prevIndex).removeClass('active').addClass('prev');
+  //         $testimonials.eq(currentIndex).removeClass('next').addClass('active');
+          
+  //         // Update container height and release animation lock after transition
+  //         setTimeout(function() {
+  //             updateContainerHeight();
+  //             isAnimating = false;
+  //         }, 500); // Match the CSS transition duration
+  //     }
+      
+  //     // Re-calculate heights on resize
+  //     $(window).on('resize', function() {
+  //         updateContainerHeight();
+  //     });
+      
+  //     // Add event listeners to the arrows
+  //     $leftArrow.on('click', goToPrevious);
+  //     $rightArrow.on('click', goToNext);
+      
+  //     // Initialize the carousel
+  //     initializeCarousel();
+      
+  //     // Update height after all images are loaded
+  //     $(window).on('load', function() {
+  //         updateContainerHeight();
+  //     });
+  // });
   
   })(jQuery);

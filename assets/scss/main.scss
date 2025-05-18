@@ -23,6 +23,8 @@ Description: Custom WordPress theme for web consultancy
 @use 'components/stats';
 @use 'components/testimonials';
 @use 'components/pagination';
+// @use 'components/slider';
+@use 'components/sloth';
 
 // Layout
 @use 'layouts/header';
