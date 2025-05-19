@@ -1,12 +1,34 @@
 @use 'sass:color';
+@use 'variables.scss' as vars;
+@use 'mixins.scss' as mx;
 
 // Utility classes
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  
+  @include mx.breakpoint-up(sm) {
+    max-width: 540px;
   }
+  
+  @include mx.breakpoint-up(md) {
+    max-width: 720px;
+  }
+  
+  @include mx.breakpoint-up(lg) {
+    max-width: 960px;
+  }
+  
+  @include mx.breakpoint-up(xl) {
+    max-width: 1140px;
+  }
+  
+  @include mx.breakpoint-up(2xl) {
+    max-width: 1320px;
+  }
+}
    
   // Button utilities
   .btn {

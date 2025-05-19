@@ -1,6 +1,7 @@
 // Contact page specific styles
 
 @use 'base/variables' as vars;
+@use 'base/mixins' as mx;
 
 .contact-hero {
     padding: 6rem 0;
@@ -22,6 +23,14 @@
       border: 2px solid vars.$color-black;
       box-shadow: 10px 10px 0 vars.$color-yellow;
       border-radius: 4px;
+
+      @include mx.breakpoint-down(md) {
+        grid-template-columns: 1fr;
+      }
+           
+      @include mx.breakpoint-up(lg) {
+        grid-template-columns: 1fr 1.5fr;
+      }
 
       .contact-form{
         input[type="text"], input[type="email"], textarea {

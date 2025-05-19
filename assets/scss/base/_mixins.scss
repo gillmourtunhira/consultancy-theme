@@ -1,29 +1,31 @@
+@use 'variables.scss' as vars;
+
 // Media Queries
 @mixin breakpoint-up($breakpoint) {
     @if $breakpoint == sm {
-      @media (min-width: $breakpoint-sm) { @content; }
+      @media (min-width: vars.$breakpoint-sm) { @content; }
     } @else if $breakpoint == md {
-      @media (min-width: $breakpoint-md) { @content; }
+      @media (min-width: vars.$breakpoint-md) { @content; }
     } @else if $breakpoint == lg {
-      @media (min-width: $breakpoint-lg) { @content; }
+      @media (min-width: vars.$breakpoint-lg) { @content; }
     } @else if $breakpoint == xl {
-      @media (min-width: $breakpoint-xl) { @content; }
+      @media (min-width: vars.$breakpoint-xl) { @content; }
     } @else if $breakpoint == 2xl {
-      @media (min-width: $breakpoint-2xl) { @content; }
+      @media (min-width: vars.$breakpoint-2xl) { @content; }
     }
   }
   
   @mixin breakpoint-down($breakpoint) {
     @if $breakpoint == sm {
-      @media (max-width: $breakpoint-sm - 1px) { @content; }
+      @media (max-width: vars.$breakpoint-sm - 1px) { @content; }
     } @else if $breakpoint == md {
-      @media (max-width: $breakpoint-md - 1px) { @content; }
+      @media (max-width: vars.$breakpoint-md - 1px) { @content; }
     } @else if $breakpoint == lg {
-      @media (max-width: $breakpoint-lg - 1px) { @content; }
+      @media (max-width: vars.$breakpoint-lg - 1px) { @content; }
     } @else if $breakpoint == xl {
-      @media (max-width: $breakpoint-xl - 1px) { @content; }
+      @media (max-width: vars.$breakpoint-xl - 1px) { @content; }
     } @else if $breakpoint == 2xl {
-      @media (max-width: $breakpoint-2xl - 1px) { @content; }
+      @media (max-width: vars.$breakpoint-2xl - 1px) { @content; }
     }
   }
   

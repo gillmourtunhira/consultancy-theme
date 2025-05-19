@@ -1,5 +1,6 @@
 // Home page specific styles
 @use 'base/variables' as vars;
+@use 'base/mixins' as mx;
 
 .hero-section {
     position: relative;
@@ -202,6 +203,22 @@
       grid-template-columns: repeat(4, 1fr); // repeat(auto-fill, minmax(250px, 1fr));
       gap: 2rem;
 
+      @include mx.breakpoint-down(md) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      @include mx.breakpoint-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include mx.breakpoint-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      @include mx.breakpoint-up(xl) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       .team-member {
         .team-photo{
           width: 100%;
@@ -223,6 +240,10 @@
           grid-template-columns: 1fr 60px;
           justify-content: space-between;
           align-items: center;
+
+          @include mx.breakpoint-down(md) {
+            grid-template-columns: auto;
+          }
         }
       }
     }

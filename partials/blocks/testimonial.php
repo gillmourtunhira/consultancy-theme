@@ -5,7 +5,7 @@ $content_align = get_sub_field('content_align');
 <!-- Testimonials Block -->
 <section class="testimonials-section py-20 bg-<?php echo esc_attr($background_colour); ?>">
     <div class="container">
-        <div class="testimonials-header-quote text-<?php echo esc_attr($content_align); ?>">
+        <div class="testimonials-header-quote mb-5 text-<?php echo esc_attr($content_align); ?>">
         <svg fill="#009688" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 30 30" xml:space="preserve" stroke="#009688"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M0,3.865v18.497h20.568L30,26.135v-3.772V3.865H0z M27.238,22.057L21.1,19.602H2.761V6.626H27.24v15.431H27.238z"></path> <g> <path d="M9.72,13.762H7.235v-2.21l1.041-2.103h0.957L8.637,11H9.72V13.762z M13.736,13.762H11.25v-2.21l1.041-2.103h0.957 L12.653,11h1.083V13.762z"></path> <path d="M16.264,12.465h2.485v2.209l-1.041,2.104h-0.957l0.595-1.551h-1.082V12.465L16.264,12.465z M20.279,12.465h2.486v2.209 l-1.041,2.104h-0.957l0.594-1.551h-1.084v-2.762H20.279z"></path> </g> </g> </g> </g></svg>
         </div>
         <div class="testimonials sloth" id="testimonials">
@@ -20,9 +20,9 @@ $content_align = get_sub_field('content_align');
                         <div class="testimonial-content">
                             <?php echo wp_kses_post($content); ?>
                         </div>
-                        <div class="testimonial-info">
+                        <div class="testimonial-info mt-5">
                             <div class="testimonial-author">
-                                <h3 class="testimonial-author-name"><?php echo esc_html($author_name); ?></h3>
+                                <h4 class="testimonial-author-name mb-0 mt-3"><?php echo esc_html($author_name); ?></h4>
                                 <p class="testimonial-author-position"><?php echo esc_html($author_position); ?></p>
                             </div>
                         </div>

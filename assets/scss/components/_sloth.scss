@@ -3,6 +3,8 @@
  * Styles for the slider and its elements
  */
 
+@use 'base/variables' as vars;
+
  // sloth.scss
 .sloth {
     position: relative;
@@ -49,8 +51,8 @@
     
     &-arrow-left,
     &-arrow-right {
-        background-color: #fff;
-        border: 1px solid #ddd;
+        background-color: vars.$color-white;
+        border: 1px solid vars.$color-green;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -61,7 +63,7 @@
         transition: all 0.3s ease;
         
         &:hover {
-            background-color: #009688;
+            background-color: vars.$color-green;
             color: white;
         }
     }
@@ -88,7 +90,7 @@
         transition: all 0.3s ease;
         
         &.active {
-            background: #009688;
+            background: vars.$color-green;
         }
     }
     
