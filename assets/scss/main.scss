@@ -41,3 +41,4 @@ Description: Custom WordPress theme for web consultancy
 @use 'pages/contact';
 
 @include mixins.display-utilities;
+@include mixins.padding-utilities;

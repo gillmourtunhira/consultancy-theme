@@ -131,6 +131,10 @@
       grid-template-columns: 1fr 2fr;
       gap: 2rem;
       align-items: center;
+
+      @include mx.breakpoint-down(lg) {
+        grid-template-columns: 1fr;
+      }
       
       .about-text {
         flex: 1;

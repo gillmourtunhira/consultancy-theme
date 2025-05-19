@@ -9,10 +9,10 @@
     $anchor = get_sub_field('anchor');
 
 ?>
-<section class="about-section bg-<?php echo esc_attr($background_colour); ?> pt-20" id="<?php echo esc_attr($anchor); ?>">
+<section class="about-section bg-<?php echo esc_attr($background_colour); ?> py-20 pt-lg-20 pb-lg-0" id="<?php echo esc_attr($anchor); ?>">
     <div class="container">
         <div class="about-content">
-            <div class="about-image">
+            <div class="about-image d-none d-lg-block">
                 <?php if( !empty($cta_media) ): ?>
                     <img src="<?php echo esc_url($cta_media['url']); ?>" alt="<?php echo esc_attr($cta_media['alt']); ?>">
                     <?php endif; ?>
