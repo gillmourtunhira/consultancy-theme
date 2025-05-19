@@ -127,8 +127,9 @@
 
   .about-section {   
     .about-content {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
       align-items: center;
       
       .about-text {

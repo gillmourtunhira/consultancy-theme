@@ -39,3 +39,5 @@ Description: Custom WordPress theme for web consultancy
 @use 'pages/portfolio';
 @use 'pages/blog';
 @use 'pages/contact';
+
+@include mixins.display-utilities;
