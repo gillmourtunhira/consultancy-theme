@@ -216,7 +216,7 @@
       $('#testimonials').sloth({
           dots: true,
           arrows: true,
-          autoplay: false,
+          autoplay: true,
           autoplaySpeed: 5000,
           fade: true
       });

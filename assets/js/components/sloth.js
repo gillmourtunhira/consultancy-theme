@@ -4,7 +4,7 @@
         // Default settings
         const defaults = {
             dots: false,
-            arrows: true,
+            arrows: false,
             autoplay: false,
             autoplaySpeed: 5000,
             fade: false
@@ -66,7 +66,7 @@
             // Update container height
             function updateContainerHeight() {
                 const activeHeight = $slides.filter('.active').outerHeight();
-                $slider.css('height', activeHeight + 'px');
+                $slider.css('min-height', activeHeight + 'px');
             }
             
             // Go to specific slide

@@ -7,7 +7,8 @@
 .sloth {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: visible; // Changed from hidden to visible
+    margin-bottom: 50px; // Added margin to make room for dots
     
     &-slide {
         position: absolute;
@@ -26,7 +27,7 @@
         }
         
         &.prev {
-            transform: translateX(-50px);
+            transform: translateX(0px);
         }
         
         &.next {
@@ -70,6 +71,11 @@
         justify-content: center;
         margin-top: 1rem;
         gap: 0.5rem;
+        position: absolute; // Added positioning
+        bottom: -30px; // Position below the slider
+        width: 100%;
+        left: 0;
+        z-index: 3;
     }
     
     &-dot {

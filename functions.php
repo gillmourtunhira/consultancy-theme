@@ -38,6 +38,7 @@ require_once get_template_directory() . '/inc/shortcodes.php';
 // Include utilities
 require_once get_template_directory() . '/inc/utilities.php';
 
+// Include SlothSlider
 require_once __DIR__ . '/lib/SlothSlider.php';
 
 // Theme setup

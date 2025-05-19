@@ -29,7 +29,7 @@ return [
             'label' => 'Background Colour',
             'type' => 'select',
             'wrapper' => [
-                'width' => '50',
+                'width' => '25',
             ],
             'choices' => [
             'muted-yellow' => 'Muted Yellow',
@@ -46,6 +46,21 @@ return [
             'accent' => 'Accent Color',
             ],
             'default_value' => 'muted-yellow',
+        ],
+        [
+            'key' => 'pivot_layout_testimonial_content_align',
+            'name' => 'content_align',
+            'label' => 'Content Align',
+            'type' => 'select',
+            'wrapper' => [
+                'width' => '25',
+            ],
+            'choices' => [
+                'left' => 'Left',
+                'center' => 'Center',
+                'right' => 'Right',
+            ],
+            'default_value' => 'center',
         ],
         [
             'key' => 'pivot_layout_testimonials',
