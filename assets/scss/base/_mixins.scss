@@ -182,3 +182,250 @@
     white-space: nowrap;
     border: 0;
   }
+
+  // Display Utilities
+
+// Base display classes
+@mixin display-base {
+  .d-none { display: none !important; }
+  .d-inline { display: inline !important; }
+  .d-inline-block { display: inline-block !important; }
+  .d-block { display: block !important; }
+  .d-flex { display: flex !important; }
+  .d-inline-flex { display: inline-flex !important; }
+  .d-grid { display: grid !important; }
+  .d-inline-grid { display: inline-grid !important; }
+  .d-table { display: table !important; }
+  .d-table-cell { display: table-cell !important; }
+}
+
+// Create responsive display classes for each breakpoint
+@mixin display-responsive {
+  // sm breakpoint
+  @include breakpoint-up(sm) {
+    .d-sm-none { display: none !important; }
+    .d-sm-inline { display: inline !important; }
+    .d-sm-inline-block { display: inline-block !important; }
+    .d-sm-block { display: block !important; }
+    .d-sm-flex { display: flex !important; }
+    .d-sm-inline-flex { display: inline-flex !important; }
+    .d-sm-grid { display: grid !important; }
+    .d-sm-inline-grid { display: inline-grid !important; }
+    .d-sm-table { display: table !important; }
+    .d-sm-table-cell { display: table-cell !important; }
+  }
+
+  // md breakpoint
+  @include breakpoint-up(md) {
+    .d-md-none { display: none !important; }
+    .d-md-inline { display: inline !important; }
+    .d-md-inline-block { display: inline-block !important; }
+    .d-md-block { display: block !important; }
+    .d-md-flex { display: flex !important; }
+    .d-md-inline-flex { display: inline-flex !important; }
+    .d-md-grid { display: grid !important; }
+    .d-md-inline-grid { display: inline-grid !important; }
+    .d-md-table { display: table !important; }
+    .d-md-table-cell { display: table-cell !important; }
+  }
+
+  // lg breakpoint
+  @include breakpoint-up(lg) {
+    .d-lg-none { display: none !important; }
+    .d-lg-inline { display: inline !important; }
+    .d-lg-inline-block { display: inline-block !important; }
+    .d-lg-block { display: block !important; }
+    .d-lg-flex { display: flex !important; }
+    .d-lg-inline-flex { display: inline-flex !important; }
+    .d-lg-grid { display: grid !important; }
+    .d-lg-inline-grid { display: inline-grid !important; }
+    .d-lg-table { display: table !important; }
+    .d-lg-table-cell { display: table-cell !important; }
+  }
+
+  // xl breakpoint
+  @include breakpoint-up(xl) {
+    .d-xl-none { display: none !important; }
+    .d-xl-inline { display: inline !important; }
+    .d-xl-inline-block { display: inline-block !important; }
+    .d-xl-block { display: block !important; }
+    .d-xl-flex { display: flex !important; }
+    .d-xl-inline-flex { display: inline-flex !important; }
+    .d-xl-grid { display: grid !important; }
+    .d-xl-inline-grid { display: inline-grid !important; }
+    .d-xl-table { display: table !important; }
+    .d-xl-table-cell { display: table-cell !important; }
+  }
+
+  // 2xl breakpoint
+  @include breakpoint-up(2xl) {
+    .d-2xl-none { display: none !important; }
+    .d-2xl-inline { display: inline !important; }
+    .d-2xl-inline-block { display: inline-block !important; }
+    .d-2xl-block { display: block !important; }
+    .d-2xl-flex { display: flex !important; }
+    .d-2xl-inline-flex { display: inline-flex !important; }
+    .d-2xl-grid { display: grid !important; }
+    .d-2xl-inline-grid { display: inline-grid !important; }
+    .d-2xl-table { display: table !important; }
+    .d-2xl-table-cell { display: table-cell !important; }
+  }
+}
+
+// Combine both mixins into one utility mixin
+@mixin display-utilities {
+  @include display-base;
+  @include display-responsive;
+}
+
+// Padding Utilities
+
+// Define spacing scale (similar to Bootstrap)
+$spacers: (
+  0: vars.$space-0,
+  1: vars.$space-1,
+  2: vars.$space-2,
+  3: vars.$space-3,
+  4: vars.$space-4,
+  5: vars.$space-5,
+  6: vars.$space-6,
+  8: vars.$space-8,
+  10: vars.$space-10,
+  12: vars.$space-12,
+  16: vars.$space-16,
+  20: vars.$space-20,
+  24: vars.$space-24,
+  32: vars.$space-32
+);
+
+// Base padding classes
+@mixin padding-base {
+  @each $spacer-key, $spacer-value in $spacers {
+    // All sides
+    .p-#{$spacer-key} { padding: $spacer-value !important; }
+    
+    // Sides
+    .px-#{$spacer-key} { 
+      padding-left: $spacer-value !important;
+      padding-right: $spacer-value !important;
+    }
+    .py-#{$spacer-key} { 
+      padding-top: $spacer-value !important;
+      padding-bottom: $spacer-value !important;
+    }
+    
+    // Individual directions
+    .pt-#{$spacer-key} { padding-top: $spacer-value !important; }
+    .pe-#{$spacer-key} { padding-right: $spacer-value !important; }
+    .pb-#{$spacer-key} { padding-bottom: $spacer-value !important; }
+    .ps-#{$spacer-key} { padding-left: $spacer-value !important; }
+  }
+}
+
+// Responsive padding classes
+@mixin padding-responsive {
+  // sm breakpoint
+  @include breakpoint-up(sm) {
+    @each $spacer-key, $spacer-value in $spacers {
+      .p-sm-#{$spacer-key} { padding: $spacer-value !important; }
+      .px-sm-#{$spacer-key} {
+        padding-left: $spacer-value !important;
+        padding-right: $spacer-value !important;
+      }
+      .py-sm-#{$spacer-key} {
+        padding-top: $spacer-value !important;
+        padding-bottom: $spacer-value !important;
+      }
+      .pt-sm-#{$spacer-key} { padding-top: $spacer-value !important; }
+      .pe-sm-#{$spacer-key} { padding-right: $spacer-value !important; }
+      .pb-sm-#{$spacer-key} { padding-bottom: $spacer-value !important; }
+      .ps-sm-#{$spacer-key} { padding-left: $spacer-value !important; }
+    }
+  }
+
+  // md breakpoint
+  @include breakpoint-up(md) {
+    @each $spacer-key, $spacer-value in $spacers {
+      .p-md-#{$spacer-key} { padding: $spacer-value !important; }
+      .px-md-#{$spacer-key} {
+        padding-left: $spacer-value !important;
+        padding-right: $spacer-value !important;
+      }
+      .py-md-#{$spacer-key} {
+        padding-top: $spacer-value !important;
+        padding-bottom: $spacer-value !important;
+      }
+      .pt-md-#{$spacer-key} { padding-top: $spacer-value !important; }
+      .pe-md-#{$spacer-key} { padding-right: $spacer-value !important; }
+      .pb-md-#{$spacer-key} { padding-bottom: $spacer-value !important; }
+      .ps-md-#{$spacer-key} { padding-left: $spacer-value !important; }
+    }
+  }
+
+  // lg breakpoint
+  @include breakpoint-up(lg) {
+    @each $spacer-key, $spacer-value in $spacers {
+      .p-lg-#{$spacer-key} { padding: $spacer-value !important; }
+      .px-lg-#{$spacer-key} {
+        padding-left: $spacer-value !important;
+        padding-right: $spacer-value !important;
+      }
+      .py-lg-#{$spacer-key} {
+        padding-top: $spacer-value !important;
+        padding-bottom: $spacer-value !important;
+      }
+      .pt-lg-#{$spacer-key} { padding-top: $spacer-value !important; }
+      .pe-lg-#{$spacer-key} { padding-right: $spacer-value !important; }
+      .pb-lg-#{$spacer-key} { padding-bottom: $spacer-value !important; }
+      .ps-lg-#{$spacer-key} { padding-left: $spacer-value !important; }
+    }
+  }
+
+  // xl breakpoint
+  @include breakpoint-up(xl) {
+    @each $spacer-key, $spacer-value in $spacers {
+      .p-xl-#{$spacer-key} { padding: $spacer-value !important; }
+      .px-xl-#{$spacer-key} {
+        padding-left: $spacer-value !important;
+        padding-right: $spacer-value !important;
+      }
+      .py-xl-#{$spacer-key} {
+        padding-top: $spacer-value !important;
+        padding-bottom: $spacer-value !important;
+      }
+      .pt-xl-#{$spacer-key} { padding-top: $spacer-value !important; }
+      .pe-xl-#{$spacer-key} { padding-right: $spacer-value !important; }
+      .pb-xl-#{$spacer-key} { padding-bottom: $spacer-value !important; }
+      .ps-xl-#{$spacer-key} { padding-left: $spacer-value !important; }
+    }
+  }
+
+  // 2xl breakpoint
+  @include breakpoint-up(2xl) {
+    @each $spacer-key, $spacer-value in $spacers {
+      .p-2xl-#{$spacer-key} { padding: $spacer-value !important; }
+      .px-2xl-#{$spacer-key} {
+        padding-left: $spacer-value !important;
+        padding-right: $spacer-value !important;
+      }
+      .py-2xl-#{$spacer-key} {
+        padding-top: $spacer-value !important;
+        padding-bottom: $spacer-value !important;
+      }
+      .pt-2xl-#{$spacer-key} { padding-top: $spacer-value !important; }
+      .pe-2xl-#{$spacer-key} { padding-right: $spacer-value !important; }
+      .pb-2xl-#{$spacer-key} { padding-bottom: $spacer-value !important; }
+      .ps-2xl-#{$spacer-key} { padding-left: $spacer-value !important; }
+    }
+  }
+}
+
+// Combine both mixins into one utility mixin
+@mixin padding-utilities {
+  @include padding-base;
+  @include padding-responsive;
+}
+
+
+
+
