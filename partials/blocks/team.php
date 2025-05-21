@@ -1,5 +1,11 @@
 <!-- Team Block -->
  <?php
+    $disable_option = get_sub_field('disable_option');
+
+    if( $disable_option ){
+        return;
+    }
+
     $section_label = get_sub_field('section_label');
     $section_title = get_sub_field('section_title');
     $button = get_sub_field('button');
@@ -25,8 +31,8 @@
                     </div>
                     <div class="team-member-info">
                         <div>
-                            <p class="team-role mb-2"><?php echo esc_html($role); ?></p>
                             <h3 class="team-name mb-0"><?php echo esc_html($name); ?></h3>
+                            <p class="team-role mb-2"><?php echo esc_html($role); ?></p>
                         </div>
                         <div>
                             <?php if( !empty($linkedin) ): ?>

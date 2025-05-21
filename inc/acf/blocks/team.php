@@ -15,10 +15,23 @@ return [
 
     'sub_fields' => [
         [
+            'key' => 'pivot_layout_team_section_disable_option',
+            'name' => 'disable_option',
+            'label' => 'Disable Block',
+            'type' => 'true_false',
+            'instructions' => __('Disable this block to show in the frontend'),
+            'wrapper' => [
+                'width' => '25',
+            ],
+        ],
+        [
             'key' => 'pivot_layout_team_section_label',
             'name' => 'section_label',
             'label' => __('Section Label', 'consultancy'),
             'type' => 'text',
+            'wrapper' => [
+                'width' => '75',
+            ],
         ],
         [
             'key' => 'pivot_layout_team_section_title',
